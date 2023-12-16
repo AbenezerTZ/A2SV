@@ -1,5 +1,9 @@
-class Solution:
-    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+class Solution(object):
+    def smallerNumbersThanCurrent(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         sort = sorted(nums)
         temp ={}
         smallerNum = []
@@ -9,4 +13,3 @@ class Solution:
         for i in nums:
             smallerNum.append(temp[i])
         return smallerNum
-                    
