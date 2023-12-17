@@ -11,10 +11,11 @@ class Solution(object):
         ans = []
 
         for x, k in queries:
-            if nums[k] % 2 == 0: total -= nums[k]
+            if nums[k] % 2 == 0: 
+                total -= nums[k]
             nums[k] += x
-            if nums[k] % 2 == 0: total += nums[k]
+            if nums[k] % 2 == 0: 
+                total += nums[k]
             ans.append(total)
-
         return ans
        
