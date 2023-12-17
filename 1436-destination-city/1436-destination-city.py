@@ -12,5 +12,3 @@ class Solution(object):
         for i in end:
             if i not in start:
                 return i
-            
-        
