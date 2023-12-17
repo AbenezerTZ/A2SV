@@ -7,8 +7,8 @@ class Solution(object):
         i=0
         new=[0]
         for i in range(len(gain)):
-            sum=new[i]+gain[i]
-            new.append(sum)
+            sums=new[i]+gain[i]
+            new.append(sums)
             i+=1
         return max(new)
 
