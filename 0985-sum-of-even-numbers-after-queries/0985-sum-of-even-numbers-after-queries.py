@@ -5,17 +5,17 @@ class Solution(object):
         :type queries: List[List[int]]
         :rtype: List[int]
         """
-        total = 0
+        s = 0
+        
         for i in nums:
-            if i%2==0: total+=i
-        ans = []
-
-        for x, k in queries:
-            if nums[k] % 2 == 0: 
-                total -= nums[k]
-            nums[k] += x
-            if nums[k] % 2 == 0: 
-                total += nums[k]
-            ans.append(total)
-        return ans
-       
+            if i % 2 == 0: s+=i
+        res = []
+        for x,y in queries:
+            if nums[y]%2 == 0:
+                s-= nums[y]
+            nums[y]+=x
+            if nums[y]%2 == 0:
+                s+=nums[y]
+            res.append(s)
+        return res
+            
