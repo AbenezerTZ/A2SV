@@ -19,7 +19,6 @@ class FoodRatings:
         return self.sorted_cuisine[cuisine][0][1]
         
 
-
 # Your FoodRatings object will be instantiated and called as such:
 # obj = FoodRatings(foods, cuisines, ratings)
 # obj.changeRating(food,newRating)
