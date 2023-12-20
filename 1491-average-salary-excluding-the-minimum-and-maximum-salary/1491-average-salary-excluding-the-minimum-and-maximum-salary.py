@@ -7,6 +7,5 @@ class Solution(object):
         salary.sort()
         if len(salary)==3:
             return salary[1]
-        # salary=salary[1:-1]
-        result=float(sum(salary[1:-1]))/float(len(salary)-2)
-        return (result)
+        total = sum(salary)
+        return float(total - salary[0] - salary[-1]) / float(len(salary)-2)
