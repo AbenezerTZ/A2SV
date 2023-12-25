@@ -4,13 +4,16 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        num1=1
-        num2=2
-        current=0
-        if n<3:
-            return n
-        for i in range(2,n):
-            current=num1+num2
-            num1=num2
-            num2=current
-        return current 
+        memo = {}
+        def dp(s):
+            if s==1:
+                return 1
+            elif s==2:
+                return 2
+            elif s in memo:
+                return memo[s]
+            else:
+                result = dp(s-1) + dp(s-2)
+                memo[s] = result
+                return memo[s]
+        return dp(n)
