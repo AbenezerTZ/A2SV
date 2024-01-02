@@ -4,12 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        freq = {}
-        for i in nums:
-            if i in freq:
-                freq[i] += 1
-            else:
-                freq[i] = 1
+        freq = Counter(nums)
         ans = [[] for _ in range(max(freq.values()))]
         for key,value in freq.items():
             for i in range(value):
