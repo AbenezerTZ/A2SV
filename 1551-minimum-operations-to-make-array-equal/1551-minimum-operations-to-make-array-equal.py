@@ -4,10 +4,5 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        i = n - 1
-        count = 0
-        while i > 0 :
-            count += i
-            i -= 2
-        return count
+        return sum(i for i in range(n - 1, 0 , -2))
             
