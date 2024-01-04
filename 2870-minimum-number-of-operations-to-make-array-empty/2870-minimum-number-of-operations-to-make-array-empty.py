@@ -6,20 +6,16 @@ class Solution(object):
         """
         count = 0
         freq = Counter(nums)
-        temp = []
+        if 1 in freq.values():
+            return -1
         for key,value in freq.items():
-            temp.append(value)
-        for i in temp:
-            if i == 1:
-                return -1
-            elif i%3 == 0:
-                count += i/3
-            else:
-                while i > 0: 
-                    if i%3 == 0:
-                        count += i/3
-                        break
-                    else:
-                        count += 1
-                        i -= 2
+            if value == 2:
+                count += 1
+            elif value%3 == 0:
+                count += value/3
+            elif value%3 == 1:
+                count += (value//3 - 1) + 2
+            elif value%3 == 2:
+                count += (value//3 - 1) + 2
         return count
+                
