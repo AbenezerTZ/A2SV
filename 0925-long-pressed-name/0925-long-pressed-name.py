@@ -9,8 +9,9 @@ class Solution(object):
         j = 0
         if name[i] != typed[j]:
             return False
-        while i < len(name):
-            if j < len(typed) and name[i] == typed[j]:
+        while i < len(name) or j < len(typed):
+            
+            if i < len(name) and j < len(typed) and name[i] == typed[j]:
                 i += 1
                 j += 1
             elif j >= len(typed):
@@ -20,8 +21,7 @@ class Solution(object):
                     j += 1
             else:
                 return False
-        while j < len(typed) and typed[j-1]==typed[j]:
-            j += 1
+            
         return i == len(name) and j == len(typed)
         
         
