@@ -8,10 +8,9 @@ class Solution(object):
         """
         count = 0
         total = 0
-        freq = Counter(banned)
         nums = [i for i in range (1,n+1)]
         for i in range(len(nums)):
-            if nums[i] not in freq:
+            if nums[i] not in banned:
                 total += nums[i]
                 if total <= maxSum:
                     count += 1
