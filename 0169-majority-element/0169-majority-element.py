@@ -10,6 +10,4 @@ class Solution(object):
                 count[i]+=1
             elif i not in count:
                 count[i]=1
-        return max(count, key=count.get)
-
-        
+        return max(count, key=count.get)  
