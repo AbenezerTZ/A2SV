@@ -8,5 +8,4 @@ class Solution(object):
         i=0
         while i<len(nums) and i==nums[i]:
             i+=1
-        return i
-        
+        return i        
