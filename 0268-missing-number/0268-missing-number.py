@@ -4,8 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        nums.sort()
-        i=0
-        while i<len(nums) and i==nums[i]:
-            i+=1
-        return i        
+        check = [i for i in range(0,len(nums)+1)]
+        check = set(check)
+        nums = set(nums)
+        temp = list(check.symmetric_difference(nums))
+        
+        return temp[0]
