@@ -5,12 +5,12 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: int
         """
-        mini = -1
-        nums1 = set(nums1)
-        nums2 = set(nums2)
-        common = nums1.intersection(nums2)
-        common = list(common)
-        if len(common) == 0:
-            return -1
-        else:
-            return min(common)
+        i = j = 0
+        while i < len(nums1) and j < len(nums2):
+            if nums1[i] > nums2[j]:
+                j += 1
+            elif nums1[i] < nums2[j]:
+                i += 1
+            else:
+                return nums1[i]
+        return  -1
