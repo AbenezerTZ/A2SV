@@ -1,9 +1,5 @@
-class Solution(object):
-    def maxFrequencyElements(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+class Solution:
+    def maxFrequencyElements(self, nums: List[int]) -> int:
         freq = Counter(nums)
         maxi = max(freq.values())
         count = 0
