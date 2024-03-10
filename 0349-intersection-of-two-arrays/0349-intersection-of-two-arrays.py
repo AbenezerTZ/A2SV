@@ -1,12 +1,10 @@
-class Solution(object):
-    def intersection(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
-        common=[]
-        for i in nums1:
-            if i in nums2 and i not in common:
-                common.append(i)
-        return (common)
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        freq = Counter(nums1)
+        ans = []
+        nums2 = set(nums2)
+        for i in nums2:
+            if i in freq:
+                ans.append(i)
+        return ans
+        
