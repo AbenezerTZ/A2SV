@@ -11,4 +11,3 @@ class Solution(object):
             pos = (pos + k - 1) % len(friends)
             friends.pop(pos)
         return friends[0]
-        
