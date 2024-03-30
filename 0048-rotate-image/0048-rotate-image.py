@@ -1,8 +1,7 @@
-class Solution(object):
-    def rotate(self, matrix):
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
         """
-        :type matrix: List[List[int]]
-        :rtype: None Do not return anything, modify matrix in-place instead.
+        Do not return anything, modify matrix in-place instead.
         """
         count = 0
         i = j = 0
@@ -36,8 +35,3 @@ class Solution(object):
             i += 1
             j += 1
             count += 2
-
-                
-                
-                
-                
