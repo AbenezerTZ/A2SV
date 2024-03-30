@@ -1,16 +1,13 @@
-class Solution(object):
-    def flipAndInvertImage(self, image):
-        """
-        :type image: List[List[int]]
-        :rtype: List[List[int]]
-        """
+class Solution:
+    def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
         for i in range(len(image)):
-            image[i] = image[i][::-1]
-            for j in range(len(image)): 
-                if image[i][j] == 0:
-                    image[i][j] = 1
+            temp = image[i][::-1]
+            for j in range(len(temp)):
+                if temp[j] == 1:
+                    temp[j] = 0
                 else:
-                    image[i][j] = 0
+                    temp[j] = 1
+            image[i] = temp
         return image
-                    
+            
         
