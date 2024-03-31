@@ -1,13 +1,7 @@
-class Solution(object):
-    def maxWidthOfVerticalArea(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: int
-        """
-        maxi = float('-inf')
+class Solution:
+    def maxWidthOfVerticalArea(self, points: List[List[int]]) -> int:
         points.sort()
-        for i in range(len(points)-1): # 0 1 2 3 4  
-            res = points[i+1][0] - points[i][0]
-            maxi = max(res,maxi)
+        maxi = 0
+        for i in range(len(points)-1):
+            maxi = max(maxi,(points[i+1][0]-points[i][0]))
         return maxi
-        
