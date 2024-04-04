@@ -1,16 +1,10 @@
-class Solution(object):
-    def minProcessingTime(self, processorTime, tasks):
-        """
-        :type processorTime: List[int]
-        :type tasks: List[int]
-        :rtype: int
-        """
+class Solution:
+    def minProcessingTime(self, processorTime: List[int], tasks: List[int]) -> int:
         tasks.sort()
-        processorTime.sort(reverse=True)
+        processorTime.sort()
+        i = len(processorTime) - 1
         maxi = 0
-        nums = []
-        for i in range(3,len(tasks),4):
-            nums.append(tasks[i])
-        for n in range(len(processorTime)):
-            maxi = max(maxi,(nums[n] + processorTime[n]))
-        return maxi     
+        for j in range(3,len(tasks),4):
+            maxi = max(maxi,(tasks[j]+processorTime[i]))
+            i -= 1
+        return maxi
