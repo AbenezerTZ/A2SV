@@ -5,7 +5,7 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        vowels = ["a", "e", "i", "o", "u"]
+        vowels = set(["a", "e", "i", "o", "u"]) 
         s = list(s)
         max_vowels = 0
         current_window = 0
