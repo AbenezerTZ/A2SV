@@ -1,10 +1,5 @@
-class Solution(object):
-    def threeSumClosest(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+class Solution:
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
         nums.sort()
         closest_sum = float('inf')
 
@@ -25,5 +20,4 @@ class Solution(object):
                     right -= 1
 
         return closest_sum
-    
-     
+        
