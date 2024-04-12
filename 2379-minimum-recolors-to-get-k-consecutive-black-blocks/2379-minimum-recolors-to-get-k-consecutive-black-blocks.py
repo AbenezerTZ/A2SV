@@ -1,10 +1,5 @@
-class Solution(object):
-    def minimumRecolors(self, blocks, k):
-        """
-        :type blocks: str
-        :type k: int
-        :rtype: int
-        """
+class Solution:
+    def minimumRecolors(self, blocks: str, k: int) -> int:
         window = 0
         
         for i in range(k): 
@@ -18,4 +13,3 @@ class Solution(object):
                 window += 1
             maxi = max(maxi,window)
         return k - maxi
-        
