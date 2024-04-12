@@ -1,11 +1,9 @@
 class Solution:
     def maximumUniqueSubarray(self, nums: List[int]) -> int:
         freq = {}
-        maxi = nums[0]
-        i = 0
-        freq[nums[0]] = 1
+        maxi = i = 0
         temp = maxi
-        for j in range(1,len(nums)):
+        for j in range(len(nums)):
             if nums[j] in freq and freq[nums[j]] == 0:
                 freq[nums[j]] += 1
             elif nums[j] in freq and freq[nums[j]] == 1:
