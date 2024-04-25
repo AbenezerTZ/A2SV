@@ -1,10 +1,5 @@
-class Solution(object):
-    def getStrongest(self, arr, k):
-        """
-        :type arr: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
+class Solution:
+    def getStrongest(self, arr: List[int], k: int) -> List[int]:
         arr.sort()
         num = []
         m = arr[(len(arr)-1)//2]
@@ -26,3 +21,4 @@ class Solution(object):
                     j -= 1
         num.append(arr[i])
         return (num[:k])
+        
