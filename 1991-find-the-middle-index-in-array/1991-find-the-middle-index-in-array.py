@@ -1,20 +1,17 @@
-class Solution(object):
-    def findMiddleIndex(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        if len(nums) == 1: 
+class Solution:
+    def findMiddleIndex(self, nums: List[int]) -> int:
+        if len(nums) == 1 or sum(nums) - nums[0] == 0:
             return 0
+        left = []
+        right = []
+        left_temp = 0
+        right_temp = 0
         for i in range(len(nums)):
-            if i == 0:
-                if sum(nums[i+1:]) == 0:
-                    return i
-            elif i == len(nums)-1:
-                if sum(nums[:i]) == 0:
-                    return i
-            else:
-                if sum(nums[:i]) == sum(nums[i+1:]):
-                    return i
+            left_temp += nums[i]
+            right_temp += nums[len(nums)-1-i]
+            left.append(left_temp)
+            right.append(right_temp)
+        for i in range(len(left)):
+            if left[i] == right[len(right)-1-i]:
+                return i
         return -1
-     
